@@ -1,16 +1,14 @@
 package controllers;
 
-import play.cache.Cache;
 import play.mvc.Controller;
 
-public class main extends Controller {
+public class main extends Controller{
 
     public static void index(){
-        String a = session.get("auth");
-        if ( a == null ){
+        String auth = session.get("auth");
+        if ( auth == null){
             redirect("/login");
-        } else {
-            render();
         }
+        render();
     }
 }

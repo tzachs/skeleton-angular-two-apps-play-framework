@@ -3,18 +3,17 @@
 # ~~~~
 
 # Home page
-#GET     /                                       Application.index
-GET /main    main.index
-GET /login   login.login
+GET     /                                       main.index
+GET     /main                                       main.index
+GET     /login                                  login.index
+POST    /login  login.index
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
 # Map static resources from the /app/public folder to the /public path
-GET     /public/                                staticDir:public
 GET     /main/                                staticDir:public/main
 GET     /login/                                staticDir:public/login
-#GET     /main/inline.bundle.js  staticFile:/main/inline.bundle.js
 
 # Catch all
-*       /{controller}/{action}                  {controller}.{action}
+#*       /{controller}/{action}                  {controller}.{action}
